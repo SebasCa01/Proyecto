@@ -17,7 +17,7 @@ public class AppPruebaProyecto {
         // TODO code application logic here
         
         //holasss
-        System.out.println("hola mundo");
+        
     }
     
 }
