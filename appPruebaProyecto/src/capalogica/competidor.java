@@ -14,12 +14,14 @@ import otherclass.equipos;
 public class competidor {
   private int edad;
   private int id;
+  private int tiempo;
   private categorias categorias;
   private equipos equipos;
 
     public competidor(int edad, int id) {
         this.edad = edad;
         this.id = id;
+        this.tiempo = 0;
         selectCategorias();
         selectEquipos();
     }
@@ -28,6 +30,12 @@ public class competidor {
     }
     public void setId(int id) {
         this.id = id;
+    }
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
+    }
+    public int getTiempo() {
+        return tiempo;
     }
     public int getEdad() {
         return edad;
