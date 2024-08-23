@@ -4,15 +4,15 @@
  */
 package capagrafica;
 
+import capalogica.carrera;
+
 /**
  *
  * @author Usuario
  */
 public class Frmgenerar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Frmgenerar
-     */
+    carrera ocarrera = new carrera();
     public Frmgenerar() {
         initComponents();
     }
@@ -43,10 +43,16 @@ public class Frmgenerar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnmuestracompe.setText("Mostrar competencias");
+        btnmuestracompe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmuestracompeActionPerformed(evt);
+            }
+        });
 
         txacompetencias.setEditable(false);
         txacompetencias.setColumns(20);
         txacompetencias.setRows(5);
+        txacompetencias.setBorder(javax.swing.BorderFactory.createTitledBorder("Competencias"));
         jScrollPane1.setViewportView(txacompetencias);
 
         txaclasfcompe.setEditable(false);
@@ -147,6 +153,11 @@ public class Frmgenerar extends javax.swing.JFrame {
         gan.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_btnmuestraganadorActionPerformed
+
+    private void btnmuestracompeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmuestracompeActionPerformed
+        ocarrera.cantkm(WIDTH);
+        
+    }//GEN-LAST:event_btnmuestracompeActionPerformed
 
     /**
      * @param args the command line arguments

@@ -22,6 +22,7 @@ public class simulador {
         this.carrera = new carrera[50];
         this.diferencia = new int[4];
     }
+    //ordena el tiempo que duraron los competidores
     public void ordenaTiempo(carrera ocarrera){
         for (int i = 0; i < this.competidor.length -1; i++) { // recorre normal
              for (int j = i +1; j < this.competidor.length; j++) { // compara con el que esta a la par
@@ -33,28 +34,8 @@ public class simulador {
              }
         }     
     }
-  
+  //clasifica por equipos
   public void clasfequipos(equipos equipo){
-//        int[] tiempototal = null;
-//        int menortiempo = 0;
-//        
-//        for (int i = 0; i < this.competidor.length; i++) {
-//            if (this.competidor[i].getEquipo() == equipo.Rapidos_y_Furiosos) {
-//                tiempototal[i] += competidor[i].getTiempo();
-//            }else if (this.competidor[i].getEquipo() == equipo.Velocidad_Total) {
-//                tiempototal[i] += competidor[i].getTiempo();
-//            }else if (this.competidor[i].getEquipo() == equipo.Prudencia) {
-//                tiempototal[i] += competidor[i].getTiempo();
-//            }else if (this.competidor[i].getEquipo() == equipo.Prudencia_Total) {
-//                tiempototal[i] += competidor[i].getTiempo();
-//            }
-//        }
-//        for (int i = 0; i < tiempototal.length; i++) {
-//            if (tiempototal[i] < tiempototal[i]) {
-//                menortiempo = tiempototal[i];
-//                diferencia[i] = tiempototal[i] - menortiempo;
-//            }
-//        }
            // Inicializar el arreglo para acumular tiempos por categoría
         int[] tiempoTotalPorCategoria = new int[categorias.values().length];
 
@@ -85,6 +66,7 @@ public class simulador {
             diferencia[i] = tiempoTotalPorCategoria[i] - menortiempo;
         }
 }
+  //clasifica por categoria
 public void clasfcategorias(categorias categoria){
      int[] tiempototal = null;
         int menortiempo = 0;

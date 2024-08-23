@@ -9,12 +9,18 @@ import java.util.HashSet;
 /**
  *
  * @author Sebas y david
+ * Estudiantes: Sebastián Castro Murillo y David Cruz Alfaro
+ * profesora: Laura Aguero Castro
+ * Universidad Técnica Nacional
+ * carrera Ingenieria del software
+ * curso ISW-211 Programación I
  */
 public class carrera {
     private competidor[] competidor;
     private double km;
     private int vuelta;
     private int[] tiempos;
+    private String[] competencias ={"Mangos","Hato","Chuchecas","Ganaderos","Pampa"};
 
     public carrera() {
         this.competidor = new competidor[50];
@@ -22,6 +28,7 @@ public class carrera {
         this.km = km;
         this.vuelta = vuelta;
     }
+    //crea el competidor
     public void creaCompetidor(){
         HashSet<Integer> idUnico = new HashSet<>();
         for (int i = 0; i < this.competidor.length; i++) {
@@ -33,6 +40,7 @@ public class carrera {
             this.competidor[i] = new competidor(id, edad);
         }
     }
+    // ordena los competidores por el id de forma ascendente
     public void idAscendente(){
         for (int i = 0; i < this.competidor.length -1; i++) {
             for (int j =  i +1; j < this.competidor.length; j++) {
@@ -44,6 +52,7 @@ public class carrera {
             }
         }
     }
+     // ordena los competidores por el id de forma descendente
     public void idDescendente(){
         for (int i = 0; i < this.competidor.length -1; i++) {
             for (int j =  i +1; j < this.competidor.length; j++) {
@@ -55,15 +64,20 @@ public class carrera {
             }
         }
     }
+    //genera la cantidad de vueltas
     public int vueltas(){
         vuelta = (int) (Math.random()*21)+30;
         return vuelta;
     }
-    public double cantkm(int vueltas){
-        double pulgadas = 8150 * vueltas;
+    // genera la cantidad de kilometros
+    public void cantkm(int vueltas){
+        for (int i = 0; i < competencias.length; i++) {
+           double pulgadas = 8150 * vueltas;
         km = pulgadas * 0.0254;
-        return km;
+        competencias[i] = "competencia: " + competencias[i] + "\t" + "vueltas:" +vueltas + "\t"+ "km" + km + "\n"; 
+        }
     }
+    // genera los tiempos de los corredores
     public void tiempos(){
         for (int i = 0; i < this.tiempos.length; i++) {
             int tiempo = (int) (Math.random()*3001) +3000;
@@ -73,6 +87,10 @@ public class carrera {
     }
     public competidor[] getCompetidor() {
         return competidor;
+    }
+
+    public String[] getCompetencias() {
+        return competencias;
     }
 
     @Override
@@ -85,5 +103,8 @@ public class carrera {
         result.append("categorias: ").append(compi.getCategorias()).append("\n");
         }
         return result.toString();
+    }  
+     public String[] toStringcompe() {
+         return getCompetencias();
     }  
 }
