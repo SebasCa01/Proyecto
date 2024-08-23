@@ -85,5 +85,41 @@ public class simulador {
             diferencia[i] = tiempoTotalPorCategoria[i] - menortiempo;
         }
 }
-
+public void clasfcategorias(categorias categoria){
+     int[] tiempototal = null;
+        int menortiempo = 0;
+           for (int i = 0; i < this.competidor.length; i++) {
+            if (this.competidor[i].getCategoria()== categoria.Juvenil) {
+                tiempototal[i] += competidor[i].getTiempo();
+            }else if (this.competidor[i].getCategoria()== categoria.Adulto) {
+                tiempototal[i] += competidor[i].getTiempo();
+            }else if (this.competidor[i].getCategoria()== categoria.Adulto_Mayor) {
+                tiempototal[i] += competidor[i].getTiempo();
+            }else if (this.competidor[i].getCategoria()== categoria.Veterano) {
+                tiempototal[i] += competidor[i].getTiempo();
+            }else if (this.competidor[i].getCategoria()== categoria.Oro) {
+                tiempototal[i] += competidor[i].getTiempo();
+            }
+        }       for (int i = 0; i < tiempototal.length; i++) {
+            if (tiempototal[i] < tiempototal[i]) {
+                menortiempo = tiempototal[i];
+                diferencia[i] = tiempototal[i] - menortiempo;
+            }
+        }
 }
+public int [] getDiferencia(){
+    return diferencia;
+}
+public String toString(){
+  StringBuilder result = new StringBuilder();
+        for (competidor compi : competidor) {
+        result.append(compi.getId()).append("\t");
+        result.append(compi.getEdad()).append("\t");
+        result.append(compi.getCategoria()).append("\t");
+        result.append(compi.getTiempo()).append("\n");
+        result.append(getDiferencia());
+        }
+        return result.toString();
+    }
+}
+
