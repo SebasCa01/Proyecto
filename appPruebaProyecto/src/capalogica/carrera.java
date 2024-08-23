@@ -8,7 +8,7 @@ import java.util.HashSet;
 
 /**
  *
- * @author Sebas
+ * @author Sebas y david
  */
 public class carrera {
     private competidor[] competidor;
