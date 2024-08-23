@@ -18,7 +18,7 @@ public class competidor {
   private categorias categorias;
   private equipos equipos;
 
-    public competidor(int edad, int id) {
+    public competidor(int id, int edad) {
         this.edad = edad;
         this.id = id;
         this.tiempo = 0;

@@ -82,7 +82,7 @@ public class carrera {
         result.append("id: ").append(compi.getId()).append("\t");
         result.append("edad: ").append(compi.getEdad()).append("\t");
         result.append("equipos: ").append(compi.getEquipos()).append("\t");;
-        result.append("categorias: ").append(compi.getCategorias()).append("\t");
+        result.append("categorias: ").append(compi.getCategorias()).append("\n");
         }
         return result.toString();
     }  
